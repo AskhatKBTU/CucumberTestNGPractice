@@ -1,7 +1,12 @@
  package com.cucumber.stepdef;
  
 
+import java.util.List;
+import java.util.Map;
+
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -28,6 +33,12 @@ public class LoginStep {
 	public void user_entered_valid_password(String password) throws Throwable {
 		System.out.println("@Then -- user entere "+password+" the password");
 	  
+	}
+	
+	@And ("^user select the age category$")
+	public void user_select_the_age_category(DataTable table) throws Throwable {
+		List<Map<String,String>> data = table.asMaps(String.class, String.class);
+		System.out.println("@And -- user selects the age: "+data.get(0).get("Age")+ "--Selected location as :"+data.get(0).get("location"));
 	}
 
 	@Then("^user \"([^\"]*)\" be successfullt logged in$")

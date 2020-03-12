@@ -9,6 +9,10 @@ Scenario Outline: In order to verify login on facebook
 	When user validates the homepage title
 	Then user entered "<username>" username
 	And user entered "<password>" password
+	And user select the age category
+	| Age      | location |
+	| below 18 | India		|
+	| above 18 | USA 			|
 	Then user "<loginType>" be successfullt logged in
 	
 Examples:
