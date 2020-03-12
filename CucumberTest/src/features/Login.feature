@@ -11,3 +11,6 @@ Scenario: In order to verify login on facebook
 	And user entered the password
 	Then user should be successfullt logged in
 	
+	
+	
+	
